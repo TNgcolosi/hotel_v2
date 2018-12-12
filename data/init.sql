@@ -15,7 +15,7 @@ CREATE TABLE Bookings (
     id INT (6) NOT NULL PRIMARY KEY auto_increment, 
     user_id INT (6) NOT NULL,
     hotel_name VARCHAR (255) NOT NULL,
-    days_booked INT (15) NOT NULL CHECK,
+    days_booked INT (15) NOT NULL,
     total_price INT (20) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

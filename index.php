@@ -15,7 +15,7 @@
 <div class="wrapper">
 
     <!-- navbar -->
-    <div id="navbar"></div>  
+    <!-- <div id="navbar"></div>  
     <nav  class="navbar navbar-expand-lg fixed-top bg-dark bg-primary ">  
         <div class="home" id="home">
         </div>
@@ -43,12 +43,21 @@
                 </li> 
             </ul> 
         </div>
-    </nav>
+    </nav> -->
 
-<?php include("functions.php"); ?>
+<?php include("functions.php"); 
+
+test_db();
+?>
 
 <!-- Call functions that will add the user and save the booking -->
 <?php 
+
+// if(isset($_POST)) {
+//     var_dump($_POST);
+//     die();
+// }
+
 isset($_POST['save']) ? add_user($_POST['firstname'], $_POST['lastname'], $_POST['email']) : "there is an error here ";
 
 isset($_POST['hotels']) ? book_vacation() : "stay home";
@@ -60,7 +69,7 @@ isset($_POST['hotels']) ? book_vacation() : "stay home";
             <div class="col-6">
                 <div class="special-card card" >
                     <h1 id="text">Hotel Reservations</h1>
-                    <form name="hotelForm" method="post" action="">
+                    <form name="hotelForm" method="post">
                         <div class="form-row">
                             <label for="firstname"> First Name</label>
                             <input class="form-control form-control-sm" name="firstname" type="text" placeholder="Your name here...">
@@ -111,7 +120,7 @@ isset($_POST['hotels']) ? book_vacation() : "stay home";
 
                                     <!-- button that saves booking to the database -->
                                     
-                                        <button type="submit" name="save" class="btn btn-secondary">Save Booking</button>
+                                        <button type="submit" name="save1" value="save" class="btn btn-secondary">Save Booking</button>
                                     </div>
                     </form>
                 </div>

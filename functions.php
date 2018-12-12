@@ -10,11 +10,23 @@ function connect_db() {
      $conn = mysqli_connect($host, $username, $password, $dbname);
      
      if (!$conn) {
+
          return false;
      } 
      return $conn;
 }
 
+function test_db() {
+    global $host, $username, $password, $dbname;
+
+     $conn = mysqli_connect($host, $username, $password, $dbname);
+     
+     if (!$conn) {
+
+         echo "not doing it" . mysqli_error($conn);
+     } 
+     echo "working";
+}
 //add user to the database
 function add_user($firstname, $lastname, $email) {
     $conn = connect_db();
